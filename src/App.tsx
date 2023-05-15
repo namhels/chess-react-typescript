@@ -6,6 +6,7 @@ import { Player } from './modals/Player';
 import { Colors } from './modals/Colors';
 import LostFigures from './components/LostFigures';
 import Timer from './components/Timer';
+import { Heading } from '@chakra-ui/react'
 
 function App() {
   const [board, setBoard] = useState(new Board());
@@ -32,6 +33,7 @@ function App() {
 
   return (
     <div className='app'>
+      <Heading as='h1' size='2xl'>ChessInfinity</Heading>
       <Timer
         restart={restart}
         currentPlayer={currentPlayer}
