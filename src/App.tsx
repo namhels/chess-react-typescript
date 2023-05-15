@@ -6,7 +6,7 @@ import { Player } from './modals/Player';
 import { Colors } from './modals/Colors';
 import LostFigures from './components/LostFigures';
 import Timer from './components/Timer';
-import { Heading } from '@chakra-ui/react'
+import { Flex, Heading } from '@chakra-ui/react'
 
 function App() {
   const [board, setBoard] = useState(new Board());
@@ -33,8 +33,13 @@ function App() {
 
   return (
     <div className='app'>
-      <Heading as='h1' size='2xl'>ChessInfinity</Heading>
-      <Timer
+      <Heading as='h1' bgGradient='linear(to-l, #7928CA, #FF0080)'
+        bgClip='text'
+        fontSize='6xl'
+        fontWeight='extrabold' >ChessInfinity
+      </Heading>
+      <Flex minWidth='max-content' justifyContent='center' alignItems='center' gap='8'>
+        <Timer
         restart={restart}
         currentPlayer={currentPlayer}
       />
@@ -54,6 +59,7 @@ function App() {
           figures={board.lostWhiteFigures}
         />
       </div>
+      </Flex>
     </div>
   );
 }
