@@ -6,7 +6,7 @@ import { Player } from './modals/Player';
 import { Colors } from './modals/Colors';
 import LostFigures from './components/LostFigures';
 import Timer from './components/Timer';
-import { Flex, Heading } from '@chakra-ui/react'
+import { Box, Flex, Heading } from '@chakra-ui/react'
 
 function App() {
   const [board, setBoard] = useState(new Board());
@@ -32,36 +32,58 @@ function App() {
   }
 
   return (
-    <div className='app'>
-      <Heading as='h1' bgGradient='linear(to-l, #7928CA, #FF0080)'
+    <Box
+      bgImage="url('/assets/backdrop/darkTheme.jpg')"
+      bgPosition="center"
+      bgRepeat="no-repeat"
+      bgSize="cover">
+      <Heading
+        as='h1'
+        w='400px'
+        bgGradient='linear(to-l, #027a95, #f6dd00)'
         bgClip='text'
         fontSize='6xl'
-        fontWeight='extrabold' >ChessInfinity
+        fontWeight='extrabold'
+        textShadow='4px 4px 28px rgb(9, 211, 226)'>
+        ChessInfinity
       </Heading>
-      <Flex minWidth='max-content' justifyContent='center' alignItems='center' gap='8'>
+      <Flex
+        minWidth='max-content'
+        justifyContent='center'
+        alignItems='center'
+        gap='8'>
         <Timer
-        restart={restart}
-        currentPlayer={currentPlayer}
-      />
-      <BoardComponent
-        board={board}
-        setBoard={setBoard}
-        currentPlayer={currentPlayer}
-        swapPlayer={swapPlayer}
-      />
-      <div>
-        <LostFigures
-          title='Чёрные фигуры:'
-          figures={board.lostBlackFigures}
+          restart={restart}
+          currentPlayer={currentPlayer}
         />
-        <LostFigures
-          title='Белые фигуры:'
-          figures={board.lostWhiteFigures}
+        <BoardComponent
+          board={board}
+          setBoard={setBoard}
+          currentPlayer={currentPlayer}
+          swapPlayer={swapPlayer}
         />
-      </div>
+        <div>
+          <LostFigures
+            title='Чёрные фигуры:'
+            figures={board.lostBlackFigures}
+          />
+          <LostFigures
+            title='Белые фигуры:'
+            figures={board.lostWhiteFigures}
+          />
+        </div>
       </Flex>
-    </div>
+    </Box>
   );
 }
 
 export default App;
+
+    // <Box
+    //   position="relative"
+    //   bgImage="url('/assets/images/projects/airbnb/airbnb-home.jpg')"
+    //   bgPosition="center"
+    //   bgRepeat="no-repeat"
+    //   bgSize="cover"
+    //   p={6}
+    // ></Box>

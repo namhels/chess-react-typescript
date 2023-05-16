@@ -2,15 +2,9 @@
   width: 100vw;
   height: 100vh;
   background-image: url(./assets/backdrop/darkTheme.jpg);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.board {
-  width: calc(64px * 8);
-  height: calc(64px * 8);
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .cell {

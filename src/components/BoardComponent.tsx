@@ -3,6 +3,7 @@ import { Board } from '../modals/Board'
 import { CellComponent } from './CellComponent';
 import { Cell } from '../modals/Cell';
 import { Player } from '../modals/Player';
+import { Flex } from '@chakra-ui/react';
 
 interface BoardProps {
   board: Board;
@@ -47,7 +48,12 @@ export const BoardComponent: FC<BoardProps> = ({ board, setBoard, currentPlayer,
   return (
     <div>
       <h3>Ход игрока {currentPlayer?.color}</h3>
-      <div className='board'>
+      <Flex
+        w='calc(64px * 8)'
+        h='calc(64px * 8)'
+        flexWrap='wrap'
+        boxShadow='0px 0px 10px 10px rgba(23,231,201,0.75)'
+      >
         {board.cells.map((row, index) =>
           <React.Fragment key={index}>
             {row.map(cell =>
@@ -60,7 +66,7 @@ export const BoardComponent: FC<BoardProps> = ({ board, setBoard, currentPlayer,
               )}
           </React.Fragment>
         )}
-      </div>
+      </Flex>
     </div>
   )
 }
