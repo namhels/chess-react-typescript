@@ -1,7 +1,12 @@
-.app {
-  width: 100vw;
-  height: 100vh;
+.appDark {
   background-image: url(./assets/backdrop/darkTheme.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.appLight {
+  background-image: url(./assets/backdrop/lightTheme.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

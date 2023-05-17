@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import { Flex, Heading } from '@chakra-ui/react'
+import { useColorMode } from '@chakra-ui/react';
 import { BoardComponent } from './components/BoardComponent';
 import { Board } from './modals/Board';
 import { Player } from './modals/Player';
 import { Colors } from './modals/Colors';
 import LostFigures from './components/LostFigures';
 import Timer from './components/Timer';
-import { Box, Flex, Heading } from '@chakra-ui/react'
+import ToggleTheme from './components/ToggleTheme';
 
 function App() {
   const [board, setBoard] = useState(new Board());
   const [whitePlayer, setWhitePlayer] = useState(new Player(Colors.WHITE));
   const [blackPlayer, setBlackPlayer] = useState(new Player(Colors.BLACK));
   const [currentPlayer, setCurrentPlayer] = useState<Player | null>(null);
+  const { colorMode } = useColorMode();
   console.log(setWhitePlayer, setBlackPlayer);
 
   useEffect(() => {
@@ -32,14 +35,14 @@ function App() {
   }
 
   return (
-    <Box
-      bgImage="url('/assets/backdrop/darkTheme.jpg')"
-      bgPosition="center"
-      bgRepeat="no-repeat"
-      bgSize="cover">
-      <Heading
-        as='h1'
-        w='400px'
+    <div className={colorMode === 'dark' ? 'appDark' : 'appLight'}>
+      <Flex
+        justifyContent='space-between'
+        alignItems='center'
+        px={7}
+        >
+        <Heading
+        p={4}
         bgGradient='linear(to-l, #027a95, #f6dd00)'
         bgClip='text'
         fontSize='6xl'
@@ -47,6 +50,8 @@ function App() {
         textShadow='4px 4px 28px rgb(9, 211, 226)'>
         ChessInfinity
       </Heading>
+      <ToggleTheme/>
+      </Flex>
       <Flex
         minWidth='max-content'
         justifyContent='center'
@@ -73,17 +78,9 @@ function App() {
           />
         </div>
       </Flex>
-    </Box>
+    </div>
   );
 }
 
 export default App;
 
-    // <Box
-    //   position="relative"
-    //   bgImage="url('/assets/images/projects/airbnb/airbnb-home.jpg')"
-    //   bgPosition="center"
-    //   bgRepeat="no-repeat"
-    //   bgSize="cover"
-    //   p={6}
-    // ></Box>
