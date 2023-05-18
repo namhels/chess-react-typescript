@@ -1,7 +1,8 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import { Player } from '../modals/Player';
 import { Colors } from '../modals/Colors';
-import { Box } from '@chakra-ui/react';
+import { MdSettings } from 'react-icons/md'
+import {  Button, Tag, TagLabel, TagLeftIcon, VStack } from '@chakra-ui/react';
 
 interface TimerProps {
   currentPlayer: Player | null;
@@ -43,19 +44,43 @@ const Timer: FC<TimerProps> = ({ currentPlayer, restart }) => {
   }
 
   return (
-    <Box
-      py={8}
-      px={4}
-      bg='cyan.300'
-      borderWidth='1px'
-      borderColor='cyan.800'
-      borderRadius='lg'>
-      <div>
-        <button onClick={handleRestart}>Рестарт</button>
-      </div>
-      <h2>Чёрные - {blackTime}</h2>
-      <h2>Белые - {whiteTime}</h2>
-    </Box>
+    <VStack
+      align='end'
+    >
+      <Tag
+        w='200px'
+        h='40px'
+        variant='solid'
+        colorScheme='cyan'
+      >
+        <TagLeftIcon boxSize='12px' as={MdSettings} />
+        <TagLabel>Black time: {blackTime}</TagLabel>
+      </Tag>
+      <Tag
+        w='250px'
+        h='50px'
+        variant='solid'
+        colorScheme='orange'
+      >
+        <TagLabel>Player move: {currentPlayer?.color}</TagLabel>
+      </Tag>
+      <Button
+        onClick={handleRestart}
+        w='250px'
+        h='50px'
+        color='white'
+        colorScheme='yellow'
+      >Restart</Button>
+      <Tag
+        w='200px'
+        h='40px'
+        variant='solid'
+        colorScheme='cyan'
+      >
+        <TagLeftIcon boxSize='12px' as={MdSettings} />
+        <TagLabel>White time: {whiteTime}</TagLabel>
+      </Tag>
+    </VStack>
   );
 };
 

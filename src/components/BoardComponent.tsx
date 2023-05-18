@@ -46,8 +46,7 @@ export const BoardComponent: FC<BoardProps> = ({ board, setBoard, currentPlayer,
   }
 
   return (
-    <div>
-      <h3>Ход игрока {currentPlayer?.color}</h3>
+    <>
       <Flex
         w='calc(64px * 8)'
         h='calc(64px * 8)'
@@ -67,6 +66,6 @@ export const BoardComponent: FC<BoardProps> = ({ board, setBoard, currentPlayer,
           </React.Fragment>
         )}
       </Flex>
-    </div>
+    </>
   )
 }
