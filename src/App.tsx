@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { Flex, Heading } from '@chakra-ui/react'
-import { useColorMode } from '@chakra-ui/react';
 import { BoardComponent } from './components/BoardComponent';
 import { Board } from './modals/Board';
 import { Player } from './modals/Player';
@@ -9,6 +7,8 @@ import { Colors } from './modals/Colors';
 import LostFigures from './components/LostFigures';
 import Timer from './components/Timer';
 import ToggleTheme from './components/ToggleTheme';
+import { useColorMode } from '@chakra-ui/react';
+import { Flex, Heading, Link } from '@chakra-ui/react'
 
 function App() {
   const [board, setBoard] = useState(new Board());
@@ -42,15 +42,17 @@ function App() {
         px={7}
         >
         <Heading
-        p={4}
-        bgGradient='linear(to-l, #027a95, #f6dd00)'
-        bgClip='text'
-        fontSize='6xl'
-        fontWeight='extrabold'
-        textShadow='4px 4px 28px rgb(9, 211, 226)'>
-        ChessInfinity
-      </Heading>
-      <ToggleTheme/>
+          as={Link}
+          href='/'
+          p={4}
+          bgGradient='linear(to-l, #027a95, #f6dd00)'
+          bgClip='text'
+          fontSize='6xl'
+          fontWeight='extrabold'
+          textShadow='4px 4px 28px rgb(9, 211, 226)'>
+          ChessInfinity
+        </Heading>
+        <ToggleTheme/>
       </Flex>
       <Flex
         minWidth='max-content'

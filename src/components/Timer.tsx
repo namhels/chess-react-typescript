@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import { Player } from '../modals/Player';
 import { Colors } from '../modals/Colors';
-import { MdSettings } from 'react-icons/md'
+import { AiOutlineFieldTime } from 'react-icons/ai'
 import {  Button, Tag, TagLabel, TagLeftIcon, VStack } from '@chakra-ui/react';
 
 interface TimerProps {
@@ -48,19 +48,20 @@ const Timer: FC<TimerProps> = ({ currentPlayer, restart }) => {
       align='end'
     >
       <Tag
-        w='200px'
-        h='40px'
-        variant='solid'
-        colorScheme='cyan'
+        w='150px'
+        h='60px'
+        bg="cyan.400"
+        color="black"
       >
-        <TagLeftIcon boxSize='12px' as={MdSettings} />
-        <TagLabel>Black time: {blackTime}</TagLabel>
+        <TagLeftIcon boxSize='32px' as={AiOutlineFieldTime} />
+        <TagLabel as='b' fontSize='4xl'>{blackTime}</TagLabel>
       </Tag>
       <Tag
         w='250px'
         h='50px'
-        variant='solid'
-        colorScheme='orange'
+        bg="orange.400"
+        color="cyan.400"
+        fontSize='2xl'
       >
         <TagLabel>Player move: {currentPlayer?.color}</TagLabel>
       </Tag>
@@ -68,17 +69,18 @@ const Timer: FC<TimerProps> = ({ currentPlayer, restart }) => {
         onClick={handleRestart}
         w='250px'
         h='50px'
-        color='white'
+        color="cyan.400"
         colorScheme='yellow'
+        fontSize='2xl'
       >Restart</Button>
       <Tag
-        w='200px'
-        h='40px'
-        variant='solid'
-        colorScheme='cyan'
+        w='150px'
+        h='60px'
+        bg="cyan.400"
+        color="white"
       >
-        <TagLeftIcon boxSize='12px' as={MdSettings} />
-        <TagLabel>White time: {whiteTime}</TagLabel>
+        <TagLeftIcon boxSize='32px' as={AiOutlineFieldTime} />
+        <TagLabel as='b' fontSize='4xl'>{whiteTime}</TagLabel>
       </Tag>
     </VStack>
   );

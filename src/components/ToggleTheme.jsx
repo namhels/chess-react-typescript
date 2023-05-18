@@ -6,12 +6,12 @@ const ToggleTheme = () => {
 
   return (
     <IconButton
-      p={2}
-      // variant="outline"
-      colorScheme="cyan"
+      // p={2}
+      variant="outline"
+      colorScheme="teal"
       aria-label="toggle theme"
-      color="white"
-      fontSize="30px"
+      // color="white"
+      fontSize="25px"
       onClick={toggleColorMode}
       icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
     />
