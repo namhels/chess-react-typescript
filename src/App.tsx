@@ -43,7 +43,7 @@ function App() {
         >
         <Heading
           as={Link}
-          href='/'
+          href='./index.html'
           p={4}
           bgGradient='linear(to-l, #027a95, #f6dd00)'
           bgClip='text'
@@ -69,16 +69,19 @@ function App() {
           currentPlayer={currentPlayer}
           swapPlayer={swapPlayer}
         />
-        <div>
+        <Flex
+          flexDirection='column'
+          gap='200px'
+        >
           <LostFigures
-            title='Чёрные фигуры:'
-            figures={board.lostBlackFigures}
-          />
-          <LostFigures
-            title='Белые фигуры:'
+            title='Lost white figures:'
             figures={board.lostWhiteFigures}
           />
-        </div>
+          <LostFigures
+            title='Lost black figures:'
+            figures={board.lostBlackFigures}
+          />
+        </Flex>
       </Flex>
     </div>
   );

@@ -1,4 +1,5 @@
 .appDark {
+  height: 100vh;
   background-image: url(./assets/backdrop/darkTheme.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -6,6 +7,7 @@
 }
 
 .appLight {
+  height: 100vh;
   background-image: url(./assets/backdrop/lightTheme.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -42,12 +44,6 @@
   width: 12px;
   border-radius: 50%;
   background-color: rgb(30, 211, 30);
-}
-
-.lost {
-  height: calc(50vh - 60px);
-  padding: 30px;
-  margin-left: 50px;
-  background-color: lightgray;
+  box-shadow: 0px 0px 16px 8px rgba(30, 211, 30, 0.75);
 }
 
