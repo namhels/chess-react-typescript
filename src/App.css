@@ -15,16 +15,16 @@
 }
 
 .cell {
-  width: 64px;
-  height: 64px;
+  width: 115px;
+  height: 115px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .cell img {
-  width: 48px;
-  height: 48px;
+  width: 96px;
+  height: 96px;
   position: relative;
 }
 
@@ -40,8 +40,8 @@
 }
 
 .available {
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
   border-radius: 50%;
   background-color: rgb(30, 211, 30);
   box-shadow: 0px 0px 16px 8px rgba(30, 211, 30, 0.75);

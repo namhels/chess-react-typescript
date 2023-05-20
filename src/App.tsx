@@ -70,8 +70,9 @@ function App() {
           swapPlayer={swapPlayer}
         />
         <Flex
+          h='915px'
           flexDirection='column'
-          gap='200px'
+          justifyContent='space-between'
         >
           <LostFigures
             title='Lost white figures:'

@@ -48,8 +48,8 @@ export const BoardComponent: FC<BoardProps> = ({ board, setBoard, currentPlayer,
   return (
     <>
       <Flex
-        w='calc(64px * 8)'
-        h='calc(64px * 8)'
+        w='calc(115px * 8)'
+        h='calc(115px * 8)'
         flexWrap='wrap'
         boxShadow='0px 0px 10px 10px rgba(23,231,201,0.75)'
       >
