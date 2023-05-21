@@ -70,7 +70,7 @@ function App() {
           swapPlayer={swapPlayer}
         />
         <Flex
-          h='915px'
+          h='512px'
           flexDirection='column'
           justifyContent='space-between'
         >

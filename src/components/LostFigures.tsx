@@ -10,7 +10,7 @@ interface LostFiguresProps {
 const LostFigures: FC<LostFiguresProps> = ({title, figures}) => {
   return (
     <Box
-      w='472px'
+      w='350px'
       p={4}
       bg='yellow.200'
       borderRadius='md'
@@ -19,7 +19,7 @@ const LostFigures: FC<LostFiguresProps> = ({title, figures}) => {
       <Flex flexWrap='wrap' gap={2}>
       {figures.map(figure =>
         <div key={figure.id}>
-          {figure.logo && <img src={figure.logo} alt='chess figure' width={48} height={48} />}
+          {figure.logo && <img src={figure.logo} alt='chess figure' width={32} height={32} />}
         </div>
       )}
       </Flex>
