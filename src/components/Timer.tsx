@@ -2,7 +2,8 @@ import React, { FC, useEffect, useRef, useState } from 'react';
 import { Player } from '../modals/Player';
 import { Colors } from '../modals/Colors';
 import { AiOutlineFieldTime } from 'react-icons/ai'
-import {  Button, Tag, TagLabel, TagLeftIcon, VStack } from '@chakra-ui/react';
+import { Button, Tag, TagLabel, TagLeftIcon, VStack } from '@chakra-ui/react';
+// import ConvertMs from '../modals/ConvertMs'
 
 interface TimerProps {
   currentPlayer: Player | null;
@@ -18,7 +19,6 @@ const Timer: FC<TimerProps> = ({ currentPlayer, restart }) => {
     startTimer();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPlayer])
-
 
   function startTimer() {
     if (timer.current) {
