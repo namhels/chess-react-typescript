@@ -43,7 +43,7 @@ function App() {
         >
         <Heading
           as={Link}
-          href='/'
+          href="/chess-react-typescript"
           p={4}
           bgGradient='linear(to-l, #027a95, #f6dd00)'
           bgClip='text'
