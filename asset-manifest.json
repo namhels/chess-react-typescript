@@ -1,17 +1,28 @@
 {
   "files": {
-    "main.css": "/chess-react-typescript/static/css/main.6ffaa860.css",
-    "main.js": "/chess-react-typescript/static/js/main.7c051f7e.js",
+    "main.css": "/chess-react-typescript/static/css/main.4c53f49f.css",
+    "main.js": "/chess-react-typescript/static/js/main.706c1d85.js",
     "static/js/787.d71cac17.chunk.js": "/chess-react-typescript/static/js/787.d71cac17.chunk.js",
     "static/media/lightTheme.jpg": "/chess-react-typescript/static/media/lightTheme.fb66f539d794438452a1.jpg",
+    "static/media/white-king.png": "/chess-react-typescript/static/media/white-king.26dc9464244abafe8c8f.png",
     "static/media/darkTheme.jpg": "/chess-react-typescript/static/media/darkTheme.c12da62444821b8cdc45.jpg",
+    "static/media/white-knight.png": "/chess-react-typescript/static/media/white-knight.94eef2b5eccc81ccb035.png",
+    "static/media/black-queen.png": "/chess-react-typescript/static/media/black-queen.b3e462eb6a743528aa84.png",
+    "static/media/white-queen.png": "/chess-react-typescript/static/media/white-queen.c0dcd8ea06e0bc9e6c18.png",
+    "static/media/white-bishop.png": "/chess-react-typescript/static/media/white-bishop.2343dc28bfe66f2fde97.png",
+    "static/media/black-king.png": "/chess-react-typescript/static/media/black-king.8f3130e7739867d1668d.png",
+    "static/media/black-bishop.png": "/chess-react-typescript/static/media/black-bishop.26610dd52faf6629308d.png",
+    "static/media/black-knight.png": "/chess-react-typescript/static/media/black-knight.2cc6a7813a0b05140ec2.png",
+    "static/media/white-pawn.png": "/chess-react-typescript/static/media/white-pawn.0f7b129c0e003ea37158.png",
+    "static/media/black-rook.png": "/chess-react-typescript/static/media/black-rook.0d56c7b60af7726c2afd.png",
+    "static/media/white-rook.png": "/chess-react-typescript/static/media/white-rook.31ff1fb982d8091ff722.png",
     "index.html": "/chess-react-typescript/index.html",
-    "main.6ffaa860.css.map": "/chess-react-typescript/static/css/main.6ffaa860.css.map",
-    "main.7c051f7e.js.map": "/chess-react-typescript/static/js/main.7c051f7e.js.map",
+    "main.4c53f49f.css.map": "/chess-react-typescript/static/css/main.4c53f49f.css.map",
+    "main.706c1d85.js.map": "/chess-react-typescript/static/js/main.706c1d85.js.map",
     "787.d71cac17.chunk.js.map": "/chess-react-typescript/static/js/787.d71cac17.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6ffaa860.css",
-    "static/js/main.7c051f7e.js"
+    "static/css/main.4c53f49f.css",
+    "static/js/main.706c1d85.js"
   ]
 }
