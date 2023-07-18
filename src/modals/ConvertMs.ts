@@ -1,16 +1,9 @@
-import { FC } from 'react';
-
-interface IConvertMsProps {
-  ms: number;
-}
-
-
-const ConvertMs: FC<IConvertMsProps> = ({ms}): any => {
+function convertMs(ms: number) {
   // Number of milliseconds per unit of time
-  const second: number = 1000;
-  const minute: number = second * 60;
-  const hour: number = minute * 60;
-  const day: number = hour * 24;
+  const second = 1000;
+  const minute = second * 60;
+  const hour = minute * 60;
+  const day = hour * 24;
 
   // Remaining days
   const days = Math.floor(ms / day);
@@ -24,4 +17,4 @@ const ConvertMs: FC<IConvertMsProps> = ({ms}): any => {
   return { days, hours, minutes, seconds };
 }
 
-export default ConvertMs;
+export default convertMs;

@@ -3,7 +3,7 @@ import { Player } from '../modals/Player';
 import { Colors } from '../modals/Colors';
 import { AiOutlineFieldTime } from 'react-icons/ai'
 import { Button, Tag, TagLabel, TagLeftIcon, VStack } from '@chakra-ui/react';
-// import ConvertMs from '../modals/ConvertMs'
+import convertMs from '../modals/ConvertMs'
 
 interface TimerProps {
   currentPlayer: Player | null;
@@ -11,8 +11,8 @@ interface TimerProps {
 }
 
 const Timer: FC<TimerProps> = ({ currentPlayer, restart }) => {
-  const [blackTime, setBlackTime] = useState(300);
-  const [whiteTime, setWhiteTime] = useState(300);
+  const [blackTime, setBlackTime] = useState(180000);
+  const [whiteTime, setWhiteTime] = useState(180000);
   const timer = useRef<null | ReturnType<typeof setInterval>>(null);
 
   useEffect(() => {
@@ -23,24 +23,36 @@ const Timer: FC<TimerProps> = ({ currentPlayer, restart }) => {
   function startTimer() {
     if (timer.current) {
       clearInterval(timer.current)
+      // timer.current = null;
     }
+
     const callback = currentPlayer?.color === Colors.WHITE ? decrementWhiteTimer : decrementBlackTimer;
     timer.current = setInterval(callback, 1000);
+
+    // if (blackTime === 0 || whiteTime === 0) {
+    //   clearInterval(timer.current)
+    // }
   }
 
   function decrementBlackTimer() {
-    setBlackTime(prev => prev - 1);
+    setBlackTime(prev => prev - 1000);
   }
 
   function decrementWhiteTimer() {
-    setWhiteTime(prev => prev - 1);
+    setWhiteTime(prev => prev - 1000);
   }
 
   function handleRestart() {
-    setWhiteTime(300);
-    setBlackTime(300);
+    setWhiteTime(180000);
+    setBlackTime(180000);
     restart();
 
+  }
+
+  function updateTimer(time: number) {
+    const minutes = convertMs(time).minutes;
+    const seconds = String(convertMs(time).seconds).padStart(2, '0');
+    return `${minutes}:${seconds}`
   }
 
   return (
@@ -54,7 +66,7 @@ const Timer: FC<TimerProps> = ({ currentPlayer, restart }) => {
         color="black"
       >
         <TagLeftIcon boxSize='32px' as={AiOutlineFieldTime} />
-        <TagLabel as='b' fontSize='4xl'>{blackTime}</TagLabel>
+        <TagLabel as='b' fontSize='4xl'>{updateTimer(blackTime)}</TagLabel>
       </Tag>
       <Tag
         w='250px'
@@ -80,7 +92,7 @@ const Timer: FC<TimerProps> = ({ currentPlayer, restart }) => {
         color="white"
       >
         <TagLeftIcon boxSize='32px' as={AiOutlineFieldTime} />
-        <TagLabel as='b' fontSize='4xl'>{whiteTime}</TagLabel>
+        <TagLabel as='b' fontSize='4xl'>{updateTimer(whiteTime)}</TagLabel>
       </Tag>
     </VStack>
   );
