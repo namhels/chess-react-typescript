@@ -11,8 +11,8 @@ interface TimerProps {
 }
 
 const Timer: FC<TimerProps> = ({ currentPlayer, restart }) => {
-  const [blackTime, setBlackTime] = useState(180000);
-  const [whiteTime, setWhiteTime] = useState(180000);
+  const [blackTime, setBlackTime] = useState(3000);
+  const [whiteTime, setWhiteTime] = useState(3000);
   const timer = useRef<null | ReturnType<typeof setInterval>>(null);
 
   useEffect(() => {
@@ -36,10 +36,20 @@ const Timer: FC<TimerProps> = ({ currentPlayer, restart }) => {
 
   function decrementBlackTimer() {
     setBlackTime(prev => prev - 1000);
+  //   if (blackTime === 0) {
+  //     setBlackTime(0);
+  //   } else {
+  //     setBlackTime(prev => prev - 1000);
+  // }
   }
 
   function decrementWhiteTimer() {
     setWhiteTime(prev => prev - 1000);
+    // if (whiteTime === 0) {
+    //   setWhiteTime(0);
+    // } else {
+    //   setWhiteTime(prev => prev - 1000);
+    // }
   }
 
   function handleRestart() {
@@ -50,6 +60,9 @@ const Timer: FC<TimerProps> = ({ currentPlayer, restart }) => {
   }
 
   function updateTimer(time: number) {
+    if (time === 0) {
+      return `0:00`
+    }
     const minutes = convertMs(time).minutes;
     const seconds = String(convertMs(time).seconds).padStart(2, '0');
     return `${minutes}:${seconds}`
