@@ -21,7 +21,7 @@ const Timer: FC<TimerProps> = ({ currentPlayer, restart }) => {
   }, [currentPlayer])
 
   function startTimer() {
-    if (timer.current) {
+    if (timer.current || timer.current === 0) {
       clearInterval(timer.current)
       // timer.current = null;
     }
@@ -36,20 +36,10 @@ const Timer: FC<TimerProps> = ({ currentPlayer, restart }) => {
 
   function decrementBlackTimer() {
     setBlackTime(prev => prev - 1000);
-  //   if (blackTime === 0) {
-  //     setBlackTime(0);
-  //   } else {
-  //     setBlackTime(prev => prev - 1000);
-  // }
   }
 
   function decrementWhiteTimer() {
     setWhiteTime(prev => prev - 1000);
-    // if (whiteTime === 0) {
-    //   setWhiteTime(0);
-    // } else {
-    //   setWhiteTime(prev => prev - 1000);
-    // }
   }
 
   function handleRestart() {
